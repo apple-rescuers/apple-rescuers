@@ -1,21 +1,36 @@
 import { h, app } from "hyperapp"
+import * as footer from "./footer"
 
 const state = {
-  count: 0
+    counter: {
+        count: 0
+    }
 }
 
 const actions = {
-  down: value => state => ({ count: state.count - value }),
-  up: value => state => ({ count: state.count + value })
-}
+    counter: {
+        down: value => state => ({ count: state.count - value }),
+        up: value => state => ({ count: state.count + value })
+    }
+} 
 
 const view = (state, actions) => (
   <div>
     <h1>Hello, Apple Rescuers!</h1>
-    <h1>{state.count}</h1>
-    <button onclick={() => actions.down(1)}>-</button>
-    <button onclick={() => actions.up(1)}>+</button>
+    <h1>{state.counter.count}</h1>
+    <button onclick={() => actions.counter.down(1)}>-</button>
+    <button onclick={() => actions.counter.up(1)}>+</button>
+    <footer.view />
   </div>
 )
 
-app(state, actions, view, document.body)
+const globalState = {
+    ...state,
+    ...footer.state,
+}
+
+const globalActions = {
+    ...actions
+}
+
+app(globalState, globalActions, view, document.body)
