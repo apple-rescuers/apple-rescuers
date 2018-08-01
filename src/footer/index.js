@@ -1,4 +1,5 @@
 import { h, app } from "hyperapp"
+import styles from './styles.styl'
 
 export const state = {
   footer: {
@@ -7,7 +8,7 @@ export const state = {
 }
 
 export const view = () => ({ footer }) => (
-    <footer>
+    <footer className={styles.main}>
         <h1>{footer.years}</h1>
     </footer>
 )

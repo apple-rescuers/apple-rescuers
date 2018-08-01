@@ -1,5 +1,6 @@
 import { h, app } from "hyperapp"
 import * as footer from "./footer"
+import styles from "./styles.styl"
 
 const state = {
     counter: {
