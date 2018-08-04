@@ -1,5 +1,7 @@
 import { h, app } from "hyperapp"
 import * as footer from "./footer"
+import * as header from "./header"
+import commonStyles from "./styles/index.styl"
 import styles from "./styles.styl"
 
 const state = {
@@ -16,8 +18,8 @@ const actions = {
 } 
 
 const view = (state, actions) => (
-  <div>
-    <h1>Hello, Apple Rescuers!</h1>
+  <div className={styles.main}>
+    <header.view />
     <h1>{state.counter.count}</h1>
     <button onclick={() => actions.counter.down(1)}>-</button>
     <button onclick={() => actions.counter.up(1)}>+</button>
@@ -27,7 +29,6 @@ const view = (state, actions) => (
 
 const globalState = {
     ...state,
-    ...footer.state,
 }
 
 const globalActions = {
