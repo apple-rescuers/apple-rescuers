@@ -1,4 +1,4 @@
-# apple-rescuers-web
+# apple-rescuers
 Web interface of apple rescuers
 
 ## Usage
