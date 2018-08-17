@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel src/index.html",
+    "build": "sh ./build.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -14,8 +15,8 @@
   "keywords": [
     "apple-rescuers"
   ],
-  "author": "igolopolosov@gmail.com ",
-  "license": "GPL",
+  "author": "igolopolosov@gmail.com",
+  "license": "UNLICENSED",
   "devDependencies": {
     "babel-plugin-syntax-object-rest-spread": "6.13.0",
     "hyperapp": "1.2.8",
